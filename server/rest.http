@@ -1,11 +1,11 @@
 ###
 
-GET http://localhost:4000/
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiSm9obiIsImlhdCI6MTYyNzYyODU5MiwiZXhwIjoxNjI3NjI4NjIyfQ.ZVnFWeGYBIPUL63TxZLSpSRQS3ekyv2xJj54M0Hbz3g
+GET http://localhost:3001/
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiSm9obiIsImlhdCI6MTYyODI0MTQyMSwiZXhwIjoxNjI4MjQxNDUxfQ.eEnWDyqysteeUuMymaIfUjHgmVbiGjiqD8Iqqh5HlgQ
 
 ###
 
-POST http://localhost:6000/login
+POST http://localhost:4000/login
 Content-Type: application/json 
 
 {

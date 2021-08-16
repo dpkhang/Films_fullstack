@@ -3,8 +3,8 @@ const app = express();
 const session = require('express-session');
 const path = require('path');
 const route = require('./routes');
-
-const POST = 4000;
+const db = require('./config/database');
+const POST = 3001;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
@@ -15,6 +15,7 @@ app.use(session({
         maxAge: 60000,
     }
 }));
+db.connect();
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 route(app);

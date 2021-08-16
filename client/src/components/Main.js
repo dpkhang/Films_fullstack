@@ -7,7 +7,10 @@ class Header extends React.Component {
 
     render(){
         return (
-            <div className="header">Header</div>
+            <form action="http://localhost:4000/login" method="POST">
+                <input type="text" name="username" />
+                <input type="submit" value="Login"/>
+            </form>
         )
     }
 }

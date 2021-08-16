@@ -1,19 +1,7 @@
-const jwt = require('jsonwebtoken')
-const dotenv = require('dotenv');
 const authToken = require('../middleware/token');
+const dotenv = require('dotenv');
 dotenv.config();
 
-
-let users = [
-    {
-        userId: 1,
-        username: 'John'
-    },
-    {
-        userId: 2,
-        username: 'Mary'
-    }
-]
 let films = [
     {
         id: 1,
@@ -29,13 +17,7 @@ let films = [
     }
 ]
 
-const route = app=>{
-    app.post ('/login', (req, res, next)=>{
-        const data = req.body.username;
-        const user = users.find(user=>user.username === data);
-        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn: '30s'})
-        res.json(accessToken);
-    })
+const route = app =>{
     app.get('/', authToken, (req, res)=>{res.json(films)});
 }
 
