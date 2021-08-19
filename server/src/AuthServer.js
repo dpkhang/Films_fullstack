@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const route = require('./routes/AuthLogin.route');
 const POST = 4000;
+const dotenv = require('dotenv');
+dotenv.config();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());

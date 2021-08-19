@@ -5,6 +5,9 @@ const path = require('path');
 const route = require('./routes');
 const db = require('./config/database');
 const POST = 3001;
+const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({

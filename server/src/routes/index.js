@@ -1,6 +1,5 @@
 const authToken = require('../middleware/token');
-const dotenv = require('dotenv');
-dotenv.config();
+
 
 let films = [
     {
