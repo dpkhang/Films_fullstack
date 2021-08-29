@@ -1,5 +1,6 @@
 import './App.css';
-import Header from './components/Main';
+import Header from './components/Header';
+import "bootstrap-icons/font/bootstrap-icons.css";c
 
 function App() {
   return (

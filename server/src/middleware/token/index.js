@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const authenToken = (req, res, next) => {
+const authToken = (req, res, next) => {
     const authTokenHeader = req.headers.authorization;
     // Bearer [token] 
     const token = authTokenHeader && authTokenHeader.split(' ')[1];
@@ -11,7 +11,8 @@ const authenToken = (req, res, next) => {
     try {
         const decode = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
         console.log(decode);
-        req.userId = decode.userId;
+        req._id = decode._id;
+        req.username = decode.username;
         next();
     }catch(err) {
         console.error(err);
@@ -19,4 +20,4 @@ const authenToken = (req, res, next) => {
     }
 }
 
-module.exports = authenToken;
+module.exports = authToken;
