@@ -1,12 +1,18 @@
-import './App.css';
-import Header from './components/Header';
-import "bootstrap-icons/font/bootstrap-icons.css";c
+import "./App.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter as Router} from "react-router-dom";
+import MapRoute from "./components/MapRoute";
+import Menu from "./components/Menu";
+import routes from './routes/Route';
 
 function App() {
   return (
-    <div className="App">
-        <Header></Header>
-    </div>
+    <Router>
+      <div className="App">
+        <Menu />
+        <MapRoute supRoute={''} routes={routes}/> 
+      </div>
+    </Router>
   );
 }
 
