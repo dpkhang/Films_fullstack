@@ -1,11 +1,12 @@
 import React from 'react';
-import Films from './Films';
-import FilmsFilter from './FilmsFilter';
+import Films from '../Films/Films';
+import FilmsFilter from '../FilmsFilter/FilmsFilter';
 
-class Movie extends React.Component {
+class SeriesMovie extends React.Component {
     componentWillMount() {
-        document.title ='Movies | Films-X';
+        document.title ='Series Movies | Films-X';
     }
+
     render(){
         return (
             <div>
@@ -27,4 +28,4 @@ class Movie extends React.Component {
     }
 }
 
-export default Movie;
+export default SeriesMovie;

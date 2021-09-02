@@ -1,6 +1,6 @@
 import React from 'react';
-import LinkMenu from './LinkMenu';
-import '../scss/FilmsMenu.scss';
+import LinkMenu from '../../../LinkMenu';
+import './FilmsMenu.scss';
 class MasterFilmsMenu extends React.Component {
     constructor(props) {
         super(props);

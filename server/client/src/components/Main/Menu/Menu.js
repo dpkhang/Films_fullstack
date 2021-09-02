@@ -1,6 +1,6 @@
 import React from 'react';
-import '../scss/Menu.scss';
-import LinkMenu from './LinkMenu';
+import './Menu.scss';
+import LinkMenu from '../../LinkMenu';
 import {Link} from 'react-router-dom';
 class Menu extends React.Component {
     constructor(props) {

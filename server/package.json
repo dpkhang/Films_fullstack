@@ -4,8 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "startAuth": "nodemon src/AuthServer.js",
-    "start": "nodemon --inspect src/index.js",
+    "authServer": "nodemon src/AuthServer.js",
+    "server": "nodemon --inspect src/index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run authServer\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,5 +21,8 @@
     "multer": "^1.4.2",
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1"
   }
 }

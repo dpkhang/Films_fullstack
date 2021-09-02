@@ -1,9 +1,9 @@
-import New from '../components/New';
-import Popular from '../components/Popular';
-import Movies from '../components/Movies';
-import SeriesMovies from '../components/SeriesMovies';
-import Trailers from '../components/Trailers';
-import NotFound from '../components/NotFound';
+import New from '../components/Main/Master/New/New';
+import Popular from '../components/Main/Master/Popular/Popular';
+import Movies from '../components/Main/Master/Movies/Movies';
+import SeriesMovies from '../components/Main/Master/SeriesMovie/SeriesMovies';
+import Trailers from '../components/Main/Master/Trailer/Trailers';
+import NotFound from '../components/Main/NotFound/NotFound';
 
 const MasterSubRouter= [
     {

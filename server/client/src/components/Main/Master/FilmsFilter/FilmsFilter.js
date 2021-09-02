@@ -1,5 +1,5 @@
 import React from 'react';
-import'../scss/FilmsFilter.scss'
+import'./FilmsFilter.scss'
 
 class FilmsFilter extends React.Component {
     render() {

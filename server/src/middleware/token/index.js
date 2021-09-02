@@ -5,7 +5,7 @@ const authToken = (req, res, next) => {
     // Bearer [token] 
     const token = authTokenHeader && authTokenHeader.split(' ')[1];
     if(!token){
-        res.redirect('http://localhost:4000');
+        res.redirect('http://localhost:7000');
         return res.sendStatus(401);
     }
     try {

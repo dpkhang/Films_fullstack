@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const route = require('./routes/AuthLogin.route');
-const POST = 4000;
+const POST = 7000;
 const db = require('./config/database');
 const dotenv = require('dotenv');
 dotenv.config();

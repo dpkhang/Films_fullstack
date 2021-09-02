@@ -1,8 +1,8 @@
 import React from 'react';
-import MasterFilmsMenu from './FilmsMenu';
+import MasterFilmsMenu from './FilmsMenu/FilmsMenu';
 import {Switch} from 'react-router-dom';
-import routes from '../routes/MasterRoute';
-import MapRoute from './MapRoute';
+import routes from '../../../routes/MasterRoute';
+import MapRoute from '../../MapRoute';
 
 class Master extends React.Component {
     constructor(props) {
