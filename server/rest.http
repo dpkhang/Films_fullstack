@@ -1,11 +1,11 @@
 ###
-
-GET http://localhost:3001/
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFlNTYwNmI0MDE4MDkyMmY0Y2M0N2QiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2Mjk1NTI3NTcsImV4cCI6MTYyOTU1MjgxN30._VSotg2_f_ZHSEzUciMiEN9Db8K39Ns_eXg3CRBN_Vk
+//secret
+GET http://localhost:10000/
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFlNTYwNmI0MDE4MDkyMmY0Y2M0N2QiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2MzA3NTA1MTMsImV4cCI6MTYzMDc1MDU3M30.9uJ6ni3Gq60ZLG2Sl5ovkYoMsunIlgrGzSJ9y8t9qK8
 
 ###
-
-POST http://localhost:4000/login
+//insert
+POST http://localhost:7000/login
 Content-Type: application/json 
 
 {
@@ -17,14 +17,19 @@ Content-Type: application/json
  
 ###
 
-POST http://localhost:4000/token
+POST http://localhost:7000/token
 Content-Type: application/json 
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFlNTYwNmI0MDE4MDkyMmY0Y2M0N2QiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2Mjk1NTI3NTcsImV4cCI6MTYyOTU1OTk1N30.R7WHJhELEyt4e3OaqBhQrfDmA2JArRidMNs6Jqims-g"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFlNTYwNmI0MDE4MDkyMmY0Y2M0N2QiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2MzA3NTA1MTMsImV4cCI6MTYzMDc1NzcxM30.7jy8vgWDl4uJzFuduFSkLX_5P81z1jVq7berLUV4bH4"
 }
 
 ###
+//update
+PUT http://localhost:7000/token
+###
 
-DELETE http://localhost:4000/logout
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFlNTYwNmI0MDE4MDkyMmY0Y2M0N2QiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2Mjk1NTI3NTcsImV4cCI6MTYyOTU1MjgxN30._VSotg2_f_ZHSEzUciMiEN9Db8K39Ns_eXg3CRBN_Vk
+
+//delete
+DELETE http://localhost:7000/logout
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFlNTYwNmI0MDE4MDkyMmY0Y2M0N2QiLCJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2MzA3NTA1MTMsImV4cCI6MTYzMDc1NzcxM30.7jy8vgWDl4uJzFuduFSkLX_5P81z1jVq7berLUV4bH4

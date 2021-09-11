@@ -1,14 +1,14 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const route = require('./routes/AuthLogin.route');
-const POST = 7000;
-const db = require('./config/database');
-const dotenv = require('dotenv');
-dotenv.config();
-app.use(express.static(path.join(__dirname, 'public')));
-db.connect();
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
-route(app);
-app.listen(POST);
+const express = require('express')
+const app = express()
+const path = require('path')
+const route = require('./routes/AuthLogin.route')
+const POST = 7000
+const db = require('./config/database')
+const dotenv = require('dotenv')
+dotenv.config()
+app.use(express.static(path.join(__dirname, 'public')))
+db.connect()
+app.use(express.urlencoded({ extended: true}))
+app.use(express.json())
+route(app)
+app.listen(POST)

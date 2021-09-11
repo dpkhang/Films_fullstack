@@ -1,17 +1,17 @@
-const users = require('../../config/schema/user.schema');
+const users = require('../../config/schema/user.schema')
 
 class Login{
     login(req, res) {
         return users.findOne({username: req.body.username})
             .then(user=>{
                 if(user.password == req.body.password){
-                    return user;
+                    return user
                 }else{
-                    res.send("Don't find username");
+                    res.send("Don't find username")
                 }
             })
             .catch(()=>{
-                res.sendStatus(500);
+                res.sendStatus(500)
             })
     }
 
@@ -19,11 +19,11 @@ class Login{
         users.updateOne({username: req.body.username}, {token: refreshToken})
             .then(()=>{
                 return new Promise(resolve=>{
-                    resolve("Success");
+                    resolve("Success")
                 })
             })
             .catch(err=>{
-                return res.status(500).json('Server is not found!');
+                return res.status(500).json('Server is not found!')
             })
     }
 
@@ -31,25 +31,25 @@ class Login{
         return users.updateOne({username: username}, {token: null})
             .then(()=>{
                 return new Promise(resolve=>{
-                    resolve("Success");
+                    resolve("Success")
                 })
             })
             .catch(err=>{
-                return res.status(500).json('Server is not found!');
+                return res.status(500).json('Server is not found!')
             })
     }
 
     getUserWithToken(req, res, next, refreshToken) {
         return users.findOne({token: refreshToken})
                     .then(user => user)
-                    .catch(err=>res.status(403).send(err));
+                    .catch(err=>res.status(403).send(err))
     }
 
     getUserWithId(req, res, next, id) {
         return users.findOne({_id: id})
                     .then(user=> user)
-                    .catch(err => res.status(403).send(err));
+                    .catch(err => res.status(403).send(err))
     }
 }
 
-module.exports = new Login;
+module.exports = new Login

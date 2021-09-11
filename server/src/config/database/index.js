@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const connect = async ()=>{
     try {
@@ -8,11 +8,11 @@ const connect = async ()=>{
             useCreateIndex: true,
             useFindAndModify: false,
             useUnifiedTopology: true
-        });
-        console.log('connect successfully');
+        })
+        console.log('connect successfully')
     }catch(err){
-        console.log('connect error');
+        console.log('connect error')
     }
 }
 
-module.exports = { connect };
+module.exports = { connect }

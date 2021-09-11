@@ -1,7 +1,7 @@
-import React from 'react';
-
+import React from 'react'
 class Detail extends React.Component {
     render() {
+        console.log(this.props.match)
         return (
             <div>
                 This is Detail

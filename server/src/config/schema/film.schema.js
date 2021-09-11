@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const schema = mongoose.Schema
 
 const film = new schema({
     name: {type: String, maxLength: 128},
@@ -8,4 +8,4 @@ const film = new schema({
     price: {type: Number},
 })
 
-module.exports = mongoose.model('Films', film, 'Films');
+module.exports = mongoose.model('Films', film, 'Films')

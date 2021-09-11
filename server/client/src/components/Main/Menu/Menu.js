@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import './Menu.scss';
-import LinkMenu from '../../LinkMenu';
-import {Link} from 'react-router-dom';
+import LinkMenu from '../../LinkMenu'
+import {Link} from 'react-router-dom'
 class Menu extends React.Component {
     constructor(props) {
         super(props);
@@ -26,8 +26,16 @@ class Menu extends React.Component {
                 to: '/introduce',
                 exact:false
             },
+            {
+                label:['Films ', <i className="bi bi-info-circle" key={5}></i>],
+                to: '/',
+                exact: true,
+            }
         ]
     }
+
+
+
     render() {
         let menu = this.listMenu.map((value, index)=>{
             return (
@@ -47,4 +55,4 @@ class Menu extends React.Component {
     }
 }
 
-export default Menu;
+export default Menu

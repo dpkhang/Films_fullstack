@@ -1,10 +1,10 @@
-import React from 'react';
-import Films from '../Films/Films';
-import FilmsFilter from '../FilmsFilter/FilmsFilter';
+import React from 'react'
+import Films from '../Films/Films'
+import FilmsFilter from '../FilmsFilter/FilmsFilter'
 
 class SeriesMovie extends React.Component {
     componentWillMount() {
-        document.title ='Series Movies | Films-X';
+        document.title ='Series Movies | Films-X'
     }
 
     render(){

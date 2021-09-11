@@ -1,5 +1,5 @@
-import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import React from 'react'
+import {Route, Link} from 'react-router-dom'
 const LinkMenu = ({label, to, exact, className}) => {
     return (
         <Route

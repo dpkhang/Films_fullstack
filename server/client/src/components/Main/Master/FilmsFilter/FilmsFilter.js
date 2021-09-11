@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import'./FilmsFilter.scss'
 
 class FilmsFilter extends React.Component {

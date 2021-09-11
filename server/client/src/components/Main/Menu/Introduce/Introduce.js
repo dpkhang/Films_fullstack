@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 class Introduce extends React.Component {
     render() {
@@ -10,4 +10,4 @@ class Introduce extends React.Component {
     }
 }
 
-export default Introduce;
+export default Introduce

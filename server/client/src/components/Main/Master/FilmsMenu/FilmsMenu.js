@@ -1,9 +1,9 @@
-import React from 'react';
-import LinkMenu from '../../../LinkMenu';
-import './FilmsMenu.scss';
+import React from 'react'
+import LinkMenu from '../../../LinkMenu'
+import './FilmsMenu.scss'
 class MasterFilmsMenu extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.listMenu = [
             {
                 label: 'New',
