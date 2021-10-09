@@ -1,11 +1,11 @@
 
 import React from 'react'
-import NotFound from '../components/Main/NotFound/NotFound'
-import Master from '../components/Main/Master/Master'
-import Introduce from '../components/Main/Menu/Introduce/Introduce'
-import Register from '../components/Main/Menu/Register/Register'
-import Contact from '../components/Main/Menu/Contact/Contact'
-import Login from '../components/Main/Menu/Login/Login'
+import NotFound from '../components/NotFound/NotFound'
+import Master from '../components/Master/Master'
+import Introduce from '../components/Introduce/Introduce'
+import Register from '../components/Register/Register'
+import Contact from '../components/Contact/Contact'
+import Login from '../components/Login/Login'
 let routes = [
     { 
         path: '/',

@@ -1,17 +1,17 @@
-import New from '../components/Main/Master/New/New'
-import Popular from '../components/Main/Master/Popular/Popular'
-import Movies from '../components/Main/Master/Movies/Movies'
-import SeriesMovies from '../components/Main/Master/SeriesMovie/SeriesMovies'
-import Trailers from '../components/Main/Master/Trailer/Trailers'
-import NotFound from '../components/Main/NotFound/NotFound'
-import Details from '../components/Main/Master/Detail/Detail'
-import Vision from '../components/Main/Master/Vision/Vision'
-import Actors from '../components/Main/Master/Actors/Actors'
+import New from '../components/Master/Pages/New'
+import Popular from '../components/Master/Pages/Popular'
+import Movies from '../components/Master/Pages/Movies'
+import SeriesMovies from '../components/Master/Pages/SeriesMovie'
+import Trailers from '../components/Master/Pages/Trailer'
+import NotFound from '../components/NotFound/NotFound'
+import Details from '../components/Master/Pages/Detail'
+import Home from '../components/Master/Pages/Home'
+import Actors from '../components/Master/Pages/Actor'
 const MasterSubRouter= [
     {
         path: '/',
         exact: true,
-        component: ()=> <Vision/>
+        component: ()=> <Home/>
     },
     {
         path: '/new',
