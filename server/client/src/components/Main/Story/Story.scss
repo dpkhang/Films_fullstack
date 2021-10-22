@@ -1,0 +1,34 @@
+@import '../../../scss/color';
+
+.main-story-background {
+    width:100%;
+    height:35rem;
+    .main-story {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .main-story-img {
+            width: 40%;
+            overflow: hidden;
+            video {
+                width: 100%;
+                border-radius: 1rem;
+            }
+        }
+        .main-story-text {
+            width: 60%;
+            p {
+                width: 100%;
+                font-size:  2.5rem;
+                font-family: Poppins;
+            }
+            p:first-child {
+                font-size: 3rem;
+                font-weight: bold;
+            }
+        }
+    }
+}

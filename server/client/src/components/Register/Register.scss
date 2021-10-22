@@ -1,13 +1,14 @@
 @import '../../scss/color';
 @import '../../scss/FontFace';
+
 .register {
     width: 60%;
-    height: 35rem;
+    height: 40rem;
     background-color: $color1;
     box-shadow: 0 0 .5rem $color2;
     border-radius: 1rem;
     margin: 0 auto;
-    margin-top: 4rem;
+    margin-top: 5rem;
     form {
         width: 100%;
         height: 100%;
@@ -36,14 +37,7 @@
                 }
                 .input-element {
                     width: 100%;
-                    height: 2rem;
-                    i {
-                        display: inline-block;
-                        font-size: 1.75rem;
-                        height: 100%;
-                        width: 10%;
-                        transform: translateY(.25rem);
-                    }
+                    height: 3rem;
                     > input {
                         display: inline-block;
                         height: 2rem;
@@ -55,6 +49,13 @@
                         outline: none;
                         padding: 0 1rem;
                         border-radius:1.5rem;
+                    }
+                    .err-text {
+                        width: 85%;
+                        margin-top: .25rem;
+                        color: red;
+                        margin-left: 1rem;
+                        
                     }
                 }
                 .input-submit {
