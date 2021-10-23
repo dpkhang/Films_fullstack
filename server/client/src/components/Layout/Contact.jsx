@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { saveUser } from '../../actions/user';
 import ContactTag from '../Contact/Contact'
+import {useHistory} from 'react-router'
+import Cookies from 'universal-cookie'
 
 function Contact(props) {
 
@@ -18,6 +20,11 @@ function Contact(props) {
         dispatch(action)
         console.log(user)
     }
+
+
+    const history = useHistory()
+    if(new Cookies().get('accessToken'))
+        history.push('/films')
 
     return (
         <>

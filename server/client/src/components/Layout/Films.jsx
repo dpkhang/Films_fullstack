@@ -4,8 +4,8 @@ import {Route, useHistory} from 'react-router-dom'
 import routes from '../../routes/MasterRoute'
 import MapRoute from '../MapRoute'
 import Home from '../Films/Pages/Home'
-import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
+import Cookies from 'universal-cookie'
 
 function Films(props) {
 
@@ -17,7 +17,8 @@ function Films(props) {
     }, [userSelector])
 
     const history = useHistory()
-    if(!localStorage.getItem('accessToken'))
+    const cookies = new Cookies()
+    if(!cookies.get('accessToken'))
         history.push('/')
 
     return (    

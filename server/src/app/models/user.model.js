@@ -1,39 +1,36 @@
 const Users = require('../../config/schema/user.schema')
+const {conn} = require('../../config/database/mysql')
 
-
-const LoginModel = (username, password) => {
-    return Users.findOne({username: username})
-        .then(user=>{
-            if(user.password == password){
-                return {
-                    _id: user._id,
-                    username: user.username,
-                    email: user.email,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    phoneNumber: user.phoneNumber,
-                    image: user.image,
-                    token: user.token,
-                }
-            }else{
-                return 0
+const Login = (username, password) => {
+    return new Promise((resolve, reject) => {
+        const query = 'select * from users where username =  ? and password = ?'
+        conn.query(query, [username, password], (err, result)=>{
+            if(err)
+                reject(err)
+            else {
+                if(result.length > 0)
+                    resolve(result[0])
+                else
+                    resolve(null)
             }
         })
-        .catch((err)=>{
-            return err
-        })
+    })
 }
 
-const RegisterModel = (username, password, email) => {
-    user = new User({
-        username,
-        password,
-        email
+const Register = (user) => {
+    return new Promise((resolve, reject) => {
+        const query = 'insert into users set ?'
+        conn.query(query, user, (err, result)=>{
+            if(err) {
+                reject(err)
+            }else {
+                resolve(user)
+            }
+        })
     })
-    user.save()
 }
 
 module.exports = {
-    LoginModel, 
-    RegisterModel
+    Login,
+    Register
 }

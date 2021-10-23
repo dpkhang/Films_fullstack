@@ -5,6 +5,7 @@ import './Register.scss'
 import { RegisterAPI } from '../API/ConnectAPI'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveUser } from '../../actions/user'
+import uniqid from 'uniqid'
 
 function Register(props) {
 
@@ -96,18 +97,22 @@ function Register(props) {
         e.preventDefault()
         try {
             if(validSubmit){
-                const result = await RegisterAPI(user)
+                const mergeUser = {
+                    id: uniqid('uid-') + Date.now(),
+                    ...user
+                }
+                const result = await RegisterAPI(mergeUser)
                 if(result.status === 200){
                     const cookie = new Cookies()
                     cookie.set('accessToken', result.data.data.token)
                     const action = saveUser(result.data.data)
                     dispatch(action)
                     alert(result.data.message)
-                    history.push('/films')
+               //     history.push('/films')
                     console.log(selector)
                 }
                 else{
-                    alert('Reigister is failed!')
+                    alert('Register is failed!')
                 }
             }
         }catch(err){

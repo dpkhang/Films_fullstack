@@ -16,7 +16,7 @@ const verifyToken = (token, token_key)=>{
         const decode = jwt.verify(token, token_key)
         return {
             _id: decode._id,
-            username: decode._username
+            username: decode.username
         }
     }
     catch(err){
