@@ -7,6 +7,7 @@ import NotFound from '../components/NotFound/NotFound'
 import Details from '../components/Films/Pages/Detail'
 import Home from '../components/Films/Pages/Home'
 import Actors from '../components/Films/Pages/Actor'
+import Profile from '../components/Films/Pages/Profile'
 const MasterSubRouter= [
     {
         path: '/',
@@ -47,6 +48,11 @@ const MasterSubRouter= [
         path: '/actors',
         exact: false,
         component: ()=> <Actors></Actors>
+    },
+    {
+        path: '/profile',
+        exact: false,
+        component: ()=> <Profile></Profile>
     },
     {
         path: '',

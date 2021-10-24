@@ -1,0 +1,56 @@
+@import '../../../scss/color';
+
+.master-films-explorer {
+    width: 22rem;
+    height: 100vh;
+    background-color: $color1;
+    position: fixed;
+    top: 0;
+    left: -25rem;
+    z-index: 3;
+    transition: .5s;
+    .wallpaper {
+        width: 100%;
+        height: 10rem;
+        filter: blur(.75px);
+    }
+    .avatar {
+        width: 100%;
+        height: 6rem;
+        position: relative;
+        img {
+            width: 9em;
+            height: 9rem;
+            display: block;
+            margin: 0 auto;
+            transform: translateY(-4rem);
+            border-radius: 50%;
+        }
+    }
+    .menu {
+        width: 100%;
+        height: 30rem;
+        li {
+            width: 100%;
+            height: 12.5%;
+            a {
+                width: 100%;
+                height: 100%;
+                display: block;
+                font-family: Poppins;
+                font-size: 1.25rem;
+                font-weight: bold;
+                text-align: center;
+                line-height: 3rem;
+            }
+        }
+    }
+    .contact {
+        width: 100%;
+        height: 7rem;
+        p {
+            font-family: Poppins;
+            text-align: center;
+        }
+    }
+}

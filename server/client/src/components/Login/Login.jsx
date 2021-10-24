@@ -3,7 +3,7 @@ import {Link, useHistory} from 'react-router-dom'
 import './Login.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import Cookies from 'universal-cookie'
-import { LoginAPI } from '../API/ConnectAPI'
+import { loginAPI } from '../API/ConnectAPI'
 import { saveUser } from '../../actions/user'
 
 function Login(props) {
@@ -31,7 +31,7 @@ function Login(props) {
 
     const handleSubmit = async (e)=>{
         e.preventDefault()
-        const result = await LoginAPI(user)
+        const result = await loginAPI(user)
         if(result.status === 400) {
             alert('Invalid username or password!')
         }else {

@@ -15,17 +15,23 @@ export default async function connectAPI(method, url, data=null, token=null) {
 
 
 //Auth API
-const LoginAPI = async (data)=>{
+const loginAPI = async (data)=>{
     const res = await connectAPI('post', '/auth/login', data)
     return res
 }
 
-const RegisterAPI = async (data)=>{
+const registerAPI = async (data)=>{
     const res = await connectAPI('post', '/auth/register', data)
     return res
 }
 
+const getUserByUsername = async (username)=>{
+    const res = await connectAPI('get', `/auth?username=${username}`)
+    return res
+}
+
 export {
-    LoginAPI,
-    RegisterAPI
+    loginAPI,
+    registerAPI,
+    getUserByUsername
 }

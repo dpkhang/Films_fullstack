@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import './Register.scss'
-import { RegisterAPI } from '../API/ConnectAPI'
+import { getUserByUsername, registerAPI } from '../API/ConnectAPI'
 import { useSelector, useDispatch } from 'react-redux'
 import { saveUser } from '../../actions/user'
 import uniqid from 'uniqid'
@@ -48,48 +48,63 @@ function Register(props) {
     }
 
     useEffect(()=>{
-        const passwordRegexp = /(?=.*[A-Z])(?=.*\d)(?=.*[a-z])[A-Za-z0-9]{10,20}$/
-        const usernameRegexp = /^[A-Za-z0-9]{7,20}$/
-        const emailRegexp = /^([A-Za-z0-9.]+)@([A-Za-z0-9.]+)\.([A-Za-z]){3,8}$/
-        let validUsername = 1, validPassword = 1
-        let validConfirmPassword = 1, validEmail = 1
-        console.log(focus)
-        if(!usernameRegexp.test(user.username) && focus === 'username'){
-            validUsername = 0
-            err_username.current.innerHTML = 'Username is from 8 characters.'
-        }else {
-            validUsername = 1
-            err_username.current.innerHTML = ''
-        }
-
-        if(!emailRegexp.test(user.email) && focus ==='email'){
-            validEmail = 0
-            err_email.current.innerHTML = 'example@gmail.com'
-        }else{
-            validEmail = 1
-            err_email.current.innerHTML = ''
-        }
-
-        if(!passwordRegexp.test(user.password) && focus ==='password'){
-            validPassword = 0
-            err_password.current.innerHTML = 'password is from 10-20: lower, upper & number.'
-        } else {
-            validPassword = 1
-            err_password.current.innerHTML = ''
-        }
-
-        if(user.password !== confirmPassword && focus === 'confirmPassword'){
-            validConfirmPassword = 0
-            err_confirm_password.current.innerHTML = 'Password do not match.'
-        }else {
-            validConfirmPassword = 1
-            err_confirm_password.current.innerHTML = ''
-        }
-
-        if(validUsername && validPassword && validConfirmPassword && validEmail)
-            setValidSubmit(1)
-        else
-            setValidSubmit(0)
+        (async ()=>{
+            const passwordRegexp = /(?=.*[A-Z])(?=.*\d)(?=.*[a-z])[A-Za-z0-9]{10,20}$/
+            const usernameRegexp = /^[A-Za-z0-9]{7,20}$/
+            const emailRegexp = /^([A-Za-z0-9.]+)@([A-Za-z0-9.]+)\.([A-Za-z]){3,8}$/
+            let validUsername = 1, validPassword = 1
+            let validConfirmPassword = 1, validEmail = 1
+            console.log(focus)
+            if(!usernameRegexp.test(user.username) && focus === 'username'){
+                validUsername = 0
+                err_username.current.innerHTML = 'Username is from 8 characters.'
+            }else{
+                if(focus === 'username') {
+                    const existedUsername = await getUserByUsername(user.username)
+                    if(existedUsername.data.data.length > 0){
+                        validUsername =  0 
+                        err_username.current.innerHTML = 'Username is existed.'
+                    }else{
+                        validUsername = 1
+                        err_username.current.innerHTML = ''
+                    } 
+                } 
+                else{
+                    validUsername = 1
+                    err_username.current.innerHTML = ''
+                } 
+            }
+    
+            if(!emailRegexp.test(user.email) && focus ==='email'){
+                validEmail = 0
+                err_email.current.innerHTML = 'example@gmail.com'
+            }else{
+                validEmail = 1
+                err_email.current.innerHTML = ''
+            }
+    
+            if(!passwordRegexp.test(user.password) && focus ==='password'){
+                validPassword = 0
+                err_password.current.innerHTML = 'password is from 10-20: lower, upper & number.'
+            } else {
+                validPassword = 1
+                err_password.current.innerHTML = ''
+            }
+    
+            if(user.password !== confirmPassword && focus === 'confirmPassword'){
+                validConfirmPassword = 0
+                err_confirm_password.current.innerHTML = 'Password do not match.'
+            }else {
+                validConfirmPassword = 1
+                err_confirm_password.current.innerHTML = ''
+            }
+    
+            if(validUsername && validPassword && validConfirmPassword && validEmail)
+                setValidSubmit(1)
+            else
+                setValidSubmit(0)            
+        })()
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user, confirmPassword])
 
@@ -98,17 +113,17 @@ function Register(props) {
         try {
             if(validSubmit){
                 const mergeUser = {
-                    id: uniqid('uid-') + Date.now(),
+                    id: uniqid('id') + '-' + Date.now(),
                     ...user
                 }
-                const result = await RegisterAPI(mergeUser)
+                const result = await registerAPI(mergeUser)
                 if(result.status === 200){
                     const cookie = new Cookies()
                     cookie.set('accessToken', result.data.data.token)
                     const action = saveUser(result.data.data)
                     dispatch(action)
                     alert(result.data.message)
-               //     history.push('/films')
+                    history.push('/films')
                     console.log(selector)
                 }
                 else{
