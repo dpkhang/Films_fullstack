@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import UpdateFrame from '../Frame/UpdateFrame/UpdateFrame'
 import './Frame.scss'
 Frame.propTypes = {
     
@@ -8,7 +8,7 @@ Frame.propTypes = {
 function Frame(props) {
     return (
         <div className="frame-profile-background">
-            
+            <UpdateFrame/>
         </div>
     );
 }

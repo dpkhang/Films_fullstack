@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import './Home.scss'
 import Slider from '../Home/Slider/Slider'
 import NewTrailers from '../Home/NewTrailers/NewTrailers'

@@ -1,14 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import UpdateProfile from '../Profile/UpdateProfile/UpdateProfile'
 import Frame from '../Profile/Frame/Frame'
-import PropTypes from 'prop-types'
 import {useHistory} from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import {getUserById} from '../../API/ConnectAPI'
 import './Profile.scss'
-Profile.propTypes = {
-    
-};
 
 function Profile(props) {
 

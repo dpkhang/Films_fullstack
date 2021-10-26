@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import'./FilmsFilter.scss'
 import SelectTag from'../SelectTag/SelectTag'
-import PropTypes from 'prop-types'
 
 FilmsFilter.propTypes = {
     

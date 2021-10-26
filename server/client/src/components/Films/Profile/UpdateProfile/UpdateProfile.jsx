@@ -23,7 +23,9 @@ function UpdateProfile(props) {
                     <p className="show">{user.email}</p>
                     <p className="show">{user.phone}</p>
                 </div>
-                <button className="btn-update">Edit Profile</button>
+                <button className="btn btn-update">Edit Profile</button>
+                <button className="btn btn-update">Change Password</button>
+                <button className="btn btn-update">VIP Package</button>
             </div>
         </div>
     );

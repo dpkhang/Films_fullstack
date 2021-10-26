@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {} from 'react'
 import Items from './Items/Items'
 import './Actor.scss'
 import {Link} from 'react-router-dom'

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Films.scss'
 import {Link} from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 Films.propTypes = {
     
