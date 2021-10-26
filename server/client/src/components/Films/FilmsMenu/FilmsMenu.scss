@@ -1,4 +1,3 @@
-@import '../../../scss/_FontFace';
 @import '../../../scss/color';
 
 .master-films-header {
@@ -81,6 +80,7 @@
                 font-weight: bold;
                 display: block;
                 color: $text_color;
+                transition: .5s;
             }
         }
         >li:hover {

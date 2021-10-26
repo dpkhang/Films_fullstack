@@ -38,7 +38,7 @@ function Films(props) {
         <div className='wrap'>
             <MasterFilmsMenu onShowExplorer={handleShowExplorer} onHideExplorer={handleHideExplorer}/>
             <Explorer  onHideExplorer={handleHideExplorer} left={left}></Explorer>
-            <div onClick={handleHideExplorer} className='master' style={{width: '80%', overflow: 'hidden', height: 'auto', margin: '0 auto'}}>
+            <div onClick={handleHideExplorer} className='master' style={{width: '100%', overflow: 'hidden', height: 'auto'}}>
                 <Route path='/' exact component={Home}/>
                 <MapRoute supRoute={'/films'} routes={routes}/>               
             </div>

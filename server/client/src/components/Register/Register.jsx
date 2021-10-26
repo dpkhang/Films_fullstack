@@ -113,13 +113,14 @@ function Register(props) {
         try {
             if(validSubmit){
                 const mergeUser = {
-                    id: uniqid('id') + '-' + Date.now(),
+                    id: uniqid() + '-' + Math.round(Math.random() * 10000) + '-' + uniqid() + '-' + Math.round(Math.random() * 10000),
                     ...user
                 }
                 const result = await registerAPI(mergeUser)
                 if(result.status === 200){
-                    const cookie = new Cookies()
-                    cookie.set('accessToken', result.data.data.token)
+                    const cookies = new Cookies()
+                    cookies.set('accessToken', result.data.data.token)
+                    cookies.set('uid', result.data.data.id)
                     const action = saveUser(result.data.data)
                     dispatch(action)
                     alert(result.data.message)

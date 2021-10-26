@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, {useEffect } from 'react'
 import './Menu.scss'
 import LinkMenu from '../../LinkMenu'
 import $ from 'jquery'
@@ -48,7 +48,6 @@ function Menu(props) {
         window.addEventListener('scroll', handleMenuBackground)
         return ()=>{
             window.removeEventListener('scroll', handleMenuBackground)
-            console.log('removed')
         }
     }, [])
 

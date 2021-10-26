@@ -20,6 +20,10 @@ const Login = async (req, res, next) => {
         })
     }catch(err){
         console.log(err)
+        return res.status(500).json({
+            message: 'Error Server!',
+            err
+        })
     }
 }
 
@@ -34,7 +38,6 @@ const Register = async (req, res, next) =>{
         const result = await UserModel.Register(user)
         const token = createToken({username, password, email})
         delete result.password
-        console.log(result)
         return res.status(200).json({
             message: 'Register successfully!',
             data: {
@@ -44,15 +47,24 @@ const Register = async (req, res, next) =>{
         })
     }catch(err) {
         console.log(err)
+        return res.status(500).json({
+            message: 'Error Server!',
+            err
+        })
     }
 }
 
-const findUserByUsername = async (req, res) => {
+const findUser = async (req, res) => {
     try {
-        const {username} = req.query
-        if(!username)
+        const {username, uid} = req.query
+        let result
+        if(!username && !uid)
             res.sendStatus(404)
-        const result = await UserModel.findUserByUsername(username)
+        if(username)
+            result = await UserModel.findUserByUsername(username)
+        if(uid) 
+            result = await UserModel.findUserById(uid)
+        delete result.password
         if(result) res.status(200).json({
             message: 'ok!',
             data: result
@@ -63,11 +75,15 @@ const findUserByUsername = async (req, res) => {
         })
     }catch(err){
         console.log(err)
+        return res.status(500).json({
+            message: 'Error Server!',
+            err
+        })
     }
 }
 
 module.exports = {
     Login,
     Register,
-    findUserByUsername
+    findUser
 }

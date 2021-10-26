@@ -30,8 +30,14 @@ const getUserByUsername = async (username)=>{
     return res
 }
 
+const getUserById = async (id)=>{
+    const res = await connectAPI('get',`auth?uid=${id}`)
+    return res
+}
+
 export {
     loginAPI,
     registerAPI,
-    getUserByUsername
+    getUserByUsername,
+    getUserById
 }

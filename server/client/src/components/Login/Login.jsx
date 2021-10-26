@@ -30,17 +30,22 @@ function Login(props) {
     }
 
     const handleSubmit = async (e)=>{
-        e.preventDefault()
-        const result = await loginAPI(user)
-        if(result.status === 400) {
+        try {
+            e.preventDefault()
+            const result = await loginAPI(user)
+            if(result.status && result.status === 200) {
+                const action = saveUser(result.data.data)
+                const cookies = new Cookies()
+                cookies.set('accessToken', result.data.data.token)
+                cookies.set('uid', result.data.data.id)
+                dispatch(action)
+                history.push('/films')
+                console.log(selector)
+            }else {
+                alert('Invalid username or password!')
+            }
+        }catch(err){
             alert('Invalid username or password!')
-        }else {
-            const action = saveUser(result.data.data)
-            const cookies = new Cookies()
-            cookies.set('accessToken', result.data.data.token)
-            dispatch(action)
-            history.push('/films')
-            console.log(selector)
         }
     }
 

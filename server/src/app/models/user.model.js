@@ -43,8 +43,22 @@ const findUserByUsername = (username) =>{
     })
 }
 
+const findUserById = (uid) =>{
+    return new Promise((resolve, reject)=>{
+        const query = 'select * from users where id =  ?'
+        conn.query(query, uid, (err, result)=>{
+            if(err) reject(err)
+            else if(result.length > 0) 
+                    resolve(result)
+                else
+                    resolve(null)
+        })
+    })
+}
+
 module.exports = {
     Login,
     Register,
     findUserByUsername,
+    findUserById
 }
