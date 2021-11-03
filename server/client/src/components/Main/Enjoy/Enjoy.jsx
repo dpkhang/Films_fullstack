@@ -9,7 +9,7 @@ function Enjoy(props) {
         <div className='main-enjoy-background'>
             <div className="main-enjoy">
                 <div className="col main-enjoy-video">
-                    <video loop={true} autoPlay={true} muted={true} >
+                    <video loop autoPlay muted >
                         <source src="/video/main/film.mp4" type="video/mp4"/>
                     </video>
                 </div>

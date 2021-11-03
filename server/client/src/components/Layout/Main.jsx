@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Login from '../Main/Search/Search'
+import Search from '../Main/Search/Search'
 import Ask from '../Main/Ask/Ask'
 import Download from '../Main/Download/Download'
 import Story from '../Main/Story/Story'
@@ -22,7 +22,7 @@ function Main(props) {
     return (
         <div>   
             <Menu></Menu>
-            <Login></Login>
+            <Search></Search>
             <Story></Story>
             <Enjoy></Enjoy>
             <Download></Download>
