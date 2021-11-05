@@ -37,10 +37,10 @@ function Login(props) {
                 const action = saveUser(result.data.data)
                 const cookies = new Cookies()
                 cookies.set('accessToken', result.data.data.token)
+                console.log(cookies.get('accessToken'))
                 cookies.set('uid', result.data.data.id)
                 dispatch(action)
                 history.push('/films')
-                console.log(selector)
             }else {
                 alert('Invalid username or password!')
             }

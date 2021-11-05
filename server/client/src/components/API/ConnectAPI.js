@@ -35,9 +35,15 @@ const getUserById = async (id)=>{
     return res
 }
 
+const checkTimeOutToken = async (token)=>{
+    const res = await connectAPI('get', `/auth/check-token`, null, token)
+    return res
+}
+
 export {
     loginAPI,
     registerAPI,
     getUserByUsername,
-    getUserById
+    getUserById,
+    checkTimeOutToken
 }

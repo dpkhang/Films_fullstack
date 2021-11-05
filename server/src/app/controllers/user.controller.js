@@ -82,6 +82,10 @@ const findUser = async (req, res) => {
     }
 }
 
+const checkTimeOutToken = () => {
+
+}
+
 module.exports = {
     Login,
     Register,

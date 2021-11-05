@@ -3,7 +3,7 @@ import UpdateProfile from '../Profile/UpdateProfile/UpdateProfile'
 import Frame from '../Profile/Frame/Frame'
 import {useHistory} from 'react-router-dom'
 import Cookies from 'universal-cookie'
-import {getUserById} from '../../API/ConnectAPI'
+import {getUserById, checkTimeOutToken} from '../../API/ConnectAPI'
 import './Profile.scss'
 
 function Profile(props) {
@@ -18,11 +18,19 @@ function Profile(props) {
 
     //hook
     const history = useHistory()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const cookies = new Cookies()
 
     useEffect(()=>{
         (async function(){
-            const cookies = new Cookies()
             try {
+                const checkToken = await checkTimeOutToken(cookies.get('accessToken'))
+                if(!checkToken) {
+                    cookies.remove('accessToken')
+                    cookies.remove('uid')
+                    console.log('hello')
+                    history.push('/')
+                }
                 const uid = cookies.get('uid')
                 if(uid){
                     const result = await getUserById(uid)
@@ -36,6 +44,9 @@ function Profile(props) {
                         }
                         setUser(mergeUser)
                     }
+                }else {
+                    cookies.remove('accessToken')
+                    history.push('/')
                 }
             }catch(err){
                 alert('This page is failed!')
@@ -43,7 +54,7 @@ function Profile(props) {
                 history.push('/')
             }
         })()
-    }, [history])
+    }, [history, cookies])
 
     return (
         <div className="profile">

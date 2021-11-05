@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import MasterFilmsMenu from '../Films/FilmsMenu/FilmsMenu'
 import Explorer from '../Films/Explorer/Explorer'
-import {Route, useHistory} from 'react-router-dom'
+import {Route, useHistory, Redirect} from 'react-router-dom'
 import routes from '../../routes/MasterRoute'
 import MapRoute from '../MapRoute'
 import Home from '../Films/Pages/Home'
 import { useSelector } from 'react-redux'
 import Cookies from 'universal-cookie'
+import { checkTimeOutToken } from '../API/ConnectAPI'
 
 function Films(props) {
 
@@ -30,10 +31,28 @@ function Films(props) {
     }
 
     const history = useHistory()
-    const cookies = new Cookies()
-    if(!cookies.get('accessToken'))
-        history.push('/')
-
+    
+    useEffect(()=>{
+        const cookies = new Cookies()
+        if(!cookies.get('accessToken')){
+            cookies.remove('uid')
+            history.push('/')
+        }
+        else
+            (async function() {
+                const checkToken = await checkTimeOutToken(cookies.get('accessToken'))
+                if(!checkToken) {
+                    cookies.remove('accessToken')
+                    cookies.remove('uid')
+                    console.log('hello')
+                    history.push('/')
+                }
+            })()
+        return ()=>{
+            
+        }
+    }, [history])
+    
     return (    
         <div className='wrap'>
             <MasterFilmsMenu onShowExplorer={handleShowExplorer} onHideExplorer={handleHideExplorer}/>

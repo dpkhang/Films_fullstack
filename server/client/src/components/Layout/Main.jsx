@@ -16,8 +16,9 @@ function Main(props) {
     }, [])
 
     const history = useHistory()
-    if(new Cookies().get('accessToken'))
-        history.push('/films')
+
+    // if(new Cookies().get('accessToken'))
+    //     history.push('/films')
 
     return (
         <div>   

@@ -10,11 +10,13 @@ const authToken = (req, res, next) => {
     }
     try {
         const decode = verifyToken(token, process.env.ACCESS_TOKEN_SECRET)
+        console.log(decode)
+        if(!decode) return res.sendStatus(403)
         req.user = decode
         next()
     }catch(err) {
-        console.error(err)
-        res.sendStatus(403)
+        console.error(err) 
+
     }
 }
 
