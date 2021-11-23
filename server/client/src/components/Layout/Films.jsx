@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MasterFilmsMenu from '../Films/FilmsMenu/FilmsMenu'
 import Explorer from '../Films/Explorer/Explorer'
-import {Route, useHistory, Redirect} from 'react-router-dom'
+import {Route, useHistory} from 'react-router-dom'
 import routes from '../../routes/MasterRoute'
 import MapRoute from '../MapRoute'
 import Home from '../Films/Pages/Home'
@@ -31,27 +31,22 @@ function Films(props) {
     }
 
     const history = useHistory()
-    
+    const cookies = new Cookies()
     useEffect(()=>{
-        const cookies = new Cookies()
-        if(!cookies.get('accessToken')){
-            cookies.remove('uid')
-            history.push('/')
-        }
-        else
             (async function() {
                 const checkToken = await checkTimeOutToken(cookies.get('accessToken'))
                 if(!checkToken) {
                     cookies.remove('accessToken')
                     cookies.remove('uid')
-                    console.log('hello')
+                    console.log('hello-world')
                     history.push('/')
                 }
             })()
         return ()=>{
             
         }
-    }, [history])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     
     return (    
         <div className='wrap'>

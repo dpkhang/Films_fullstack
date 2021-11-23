@@ -9,7 +9,7 @@ function NewTrailers(props) {
     //state
     const [images] = useState(newTrailers)
 
-    const onClickPrevious = e=>{
+    const onClickPrevious = e =>{
         let element = e.target.parentNode.nextSibling.firstChild
         let left = element.offsetLeft + 1200
         if(left > 0)

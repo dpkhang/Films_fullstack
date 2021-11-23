@@ -51,7 +51,7 @@
                     color: $color1;
                     outline: none;
                     padding: 0 1rem;
-                    border-radius:1.5rem;
+                    border-radius:.25rem;
                 }
             }
         }
@@ -85,7 +85,7 @@
                 font-family: Poppins;
                 background: linear-gradient(90deg, $color3, #58e9ff, $color5);
                 background-size: 500% 100%;
-                border-radius: 1.5rem;
+                border-radius: .25rem;
                 display: block;
                 text-align: center;
                 line-height: 3rem;

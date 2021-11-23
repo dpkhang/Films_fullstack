@@ -2,3 +2,22 @@
 .App {
     width: 100%;
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

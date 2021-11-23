@@ -36,7 +36,7 @@ function Explorer(props) {
                 <li><Link to="/films/setting">Setting</Link></li>
                 <li><Link to="/films/privacy">Privacy</Link></li>
                 <li><Link to="/films/security-policy">Security</Link></li>
-                <li><Link to="/" onClick={handleLogout}>Log out</Link></li>
+                <li><Link to ="" onClick={handleLogout}>Log out</Link></li>
             </ul>
             <div className="contact">
                 <p>Address: Ninh Kieu, Can Tho</p>

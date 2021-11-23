@@ -38,7 +38,7 @@
             display: flex;
             justify-content: center;
             align-self: center;
-            border-radius: 1.5rem;
+            border-radius: .25rem;
             input {
                 width: 80%;
                 height: 100%;
@@ -69,11 +69,14 @@
         align-items: center;
         line-height: 3rem;
         margin: 0 auto;
+
         > li {
             width: 15%;
             height: 3rem;
             transition: .5s;
             margin: 0 .5rem;
+            border-radius: .25rem;
+            overflow: hidden;
             > a {
                 font-size: 1.25rem;
                 font-family: Poppins;
@@ -85,7 +88,6 @@
         }
         >li:hover {
             background-color: $color3;
-            border-radius: 2rem;
         }
         >li:hover a {
             color:$color5;

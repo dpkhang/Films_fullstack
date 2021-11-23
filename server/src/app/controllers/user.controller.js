@@ -64,11 +64,13 @@ const findUser = async (req, res) => {
             result = await UserModel.findUserByUsername(username)
         if(uid) 
             result = await UserModel.findUserById(uid)
-        delete result.password
-        if(result) res.status(200).json({
-            message: 'ok!',
-            data: result
-        })
+        if(result) {
+            delete result.password
+            res.status(200).json({
+                message: 'ok!',
+                data: result
+            })
+        }
         else res.status(200).json({
             message: 'Data is not found!',
             data: []
