@@ -24,16 +24,6 @@ function Menu(props) {
             label:['Introduce ', <i className="bi bi-info-circle" key={4}></i>],
             to: '/introduce',
             exact:false
-        },
-        {
-            label:['Register ',<i className="bi bi-plus-circle" key={2}></i>],
-            to: '/register',
-            exact:false
-        },
-        {
-            label: ['Log in ', <i className="bi bi-box-arrow-right"  key={1}></i>],
-            to: '/login',
-            exact: false
         }
     ]
 

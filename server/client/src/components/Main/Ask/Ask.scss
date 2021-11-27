@@ -5,6 +5,7 @@
     height: 50rem;
     background-color: rgba(0, 0, 0, 0.1);
     padding-top: 7rem;
+    transition: .5s;
     .main-ask {
         width: 80%;
         height: 100%;
@@ -12,6 +13,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        transition: .5s;
         .row {
             width: 70%;
             p{

@@ -13,6 +13,21 @@ function Ask(props) {
 
     //ref
 
+    //hook
+
+    useEffect(()=>{
+        $(window).scroll((e)=>{
+            console.log($(window).scrollTop())
+            if($(window).scrollTop() > window.innerHeight + 110*15 - window.innerHeight/2){
+                $('.main-ask-background').css('opacity', 1)
+                $('.main-ask-background .main-ask').css('transform', 'translateY(0rem)')
+            }    
+            else {
+                $('.main-ask-background').css('opacity', 0)
+                $('.main-ask-background .main-ask').css('transform', 'translateY(10rem)')
+            }
+        })
+    }, [])
     //handle
 
     const handleClick = (e)=>{

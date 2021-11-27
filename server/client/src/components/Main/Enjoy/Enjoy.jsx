@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Enjoy.scss'
+import $ from 'jquery'
 Enjoy.propTypes = {
     
 };
 
 function Enjoy(props) {
+    //props
+
+    //state 
+
+    //hook
+
+    useEffect(()=>{
+        $(window).scroll((e)=>{
+            console.log($(window).scrollTop())
+            if($(window).scrollTop() > window.innerHeight + 35*15 - window.innerHeight/2 && $(window).scrollTop() < window.innerHeight + 70*15){
+                $('.main-enjoy-background').css('opacity', 1)
+                $('.main-enjoy-background .main-enjoy').css('transform', 'translateX(0rem)')
+            }    
+            else {
+                $('.main-enjoy-background').css('opacity', .2)
+                $('.main-enjoy-background .main-enjoy').css('transform', 'translateX(-6rem)')
+            }
+        })
+    }, [])
+
     return (
         <div className='main-enjoy-background'>
             <div className="main-enjoy">
@@ -24,4 +45,4 @@ function Enjoy(props) {
     );
 }
 
-export default Enjoy;
+export default Enjoy

@@ -3,6 +3,8 @@
 .main-story-background {
     width:100%;
     height:35rem;
+    transition: .5s;
+    opacity: .2;
     .main-story {
         width: 80%;
         height: 100%;
@@ -10,6 +12,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transform: translateX(6rem);
+        transition: 1s;
         .main-story-img {
             width: 40%;
             overflow: hidden;
