@@ -14,7 +14,6 @@ function Enjoy(props) {
 
     useEffect(()=>{
         $(window).scroll((e)=>{
-            console.log($(window).scrollTop())
             if($(window).scrollTop() > window.innerHeight + 35*15 - window.innerHeight/2 && $(window).scrollTop() < window.innerHeight + 70*15){
                 $('.main-enjoy-background').css('opacity', 1)
                 $('.main-enjoy-background .main-enjoy').css('transform', 'translateX(0rem)')

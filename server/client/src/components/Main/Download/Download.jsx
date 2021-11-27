@@ -13,7 +13,6 @@ function Download(props) {
     //hook
     useEffect(()=>{
         $(window).scroll((e)=>{
-            console.log($(window).scrollTop())
             if($(window).scrollTop() > window.innerHeight + 70*15 - window.innerHeight/2 && $(window).scrollTop() < window.innerHeight + 110*15){
                 $('.main-download-background').css('opacity', 1)
                 $('.main-download-background .main-download').css('transform', 'translateX(0rem)')

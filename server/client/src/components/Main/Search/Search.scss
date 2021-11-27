@@ -85,11 +85,12 @@
                 font-size: 2rem;
                 margin: 0 2rem;
                 border-radius: .25rem;
-                transition: 1s;
+                transition: 1s;  
                 opacity: 0;
             }
             .item-btn:hover {
-                letter-spacing: 2px;
+                letter-spacing: 3px;
+                transition: letter-spacing .5s;
             }
             .btn-sign-up {
                 background-color: rgb(255, 255, 255);

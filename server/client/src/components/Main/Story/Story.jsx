@@ -14,7 +14,6 @@ function Story(props) {
 
     useEffect(()=>{
         $(window).scroll((e)=>{
-            console.log(window.innerHeight)
             if($(window).scrollTop() > window.innerHeight - window.innerHeight/2 && $(window).scrollTop() < window.innerHeight + 35*15){
                 $('.main-story-background').css('opacity', 1)
                 $('.main-story-background .main-story').css('transform', 'translateX(0rem)')
