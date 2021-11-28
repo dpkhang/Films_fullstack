@@ -1,13 +1,22 @@
 import React from 'react'
 import './Footer.scss'
+import PropTypes from 'prop-types'
 
 Footer.propTypes = {
-    
+    onHideExplorer: PropTypes.func
 };
 
 function Footer(props) {
+    //props
+    const {onHideExplorer} = props
+
+    const handleClick = (e)=> {
+        if(onHideExplorer)
+            onHideExplorer()
+    }
+
     return (
-        <div className="footer-background">
+        <div className="footer-background" onClick={handleClick}>
             <div className="footer">
                 <div className="col">
                     <p className="text">

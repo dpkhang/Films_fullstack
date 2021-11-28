@@ -18,10 +18,11 @@
         width: 100%;
         position: relative;
         .activated-inform {
-            color: $color4;
+            color: greenyellow;
+            font-size: 1.75rem;
         }
         p {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-family: Poppins;
             font-weight: bold;
             height: 2rem;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MasterFilmsMenu from '../Films/FilmsMenu/FilmsMenu'
 import Explorer from '../Films/Explorer/Explorer'
+import Footer from '../Footer/Footer'
 import {Route, useHistory} from 'react-router-dom'
 import routes from '../../routes/MasterRoute'
 import MapRoute from '../MapRoute'
@@ -56,6 +57,7 @@ function Films(props) {
                 <Route path='/' exact component={Home}/>
                 <MapRoute supRoute={'/films'} routes={routes}/>               
             </div>
+            <Footer onHideExplorer={handleHideExplorer}/>
         </div>
     );
 }
