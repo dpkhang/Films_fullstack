@@ -1,17 +1,34 @@
-import React, {} from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './UpdateProfile.scss'
+import $ from 'jquery'
 
 UpdateProfile.propTypes = {
-    user: PropTypes.object
+    user: PropTypes.object,
+    onClickToChangeFrame: PropTypes.func
 };
 
 function UpdateProfile(props) {
     //props
-        const {user} = props
+        const {user, onClickToChangeFrame} = props
+
     //state
 
     //hook
+
+    useEffect(()=>{
+        $('.update-profile-background .btn-update')[0].style.letterSpacing = '4px'
+    }, [])
+    //handle
+
+    const handleClick =(e)=>{
+        onClickToChangeFrame(e.target.dataset.frame)
+        e.target.style.letterSpacing = '4px'
+        for(let value of $('.update-profile-background .btn-update'))
+            if(value.dataset.frame !== e.target.dataset.frame) {
+                value.removeAttribute('style')
+            }
+    }
 
     return (
         <div className="update-profile-background">
@@ -23,9 +40,8 @@ function UpdateProfile(props) {
                     <p className="show">{user.email}</p>
                     <p className="show">{user.phone}</p>
                 </div>
-                <button className="btn btn-update">Edit Profile</button>
-                <button className="btn btn-update">Change Password</button>
-                <button className="btn btn-update">VIP Package</button>
+                <button className="btn btn-update" data-frame='vip' onClick={handleClick}>Manage VIP</button>
+                <button className="btn btn-update" data-frame='update' onClick={handleClick}>Edit Profile</button>
             </div>
         </div>
     );

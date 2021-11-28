@@ -16,10 +16,14 @@ function Profile(props) {
         phone: ''
     })
 
+    const [frameType, setFrameType] = useState('vip')
+
+
     //hook
     const history = useHistory()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const cookies = new Cookies()
+
 
     useEffect(()=>{
         (async function(){
@@ -51,10 +55,15 @@ function Profile(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    //handle
+    const handleClickToChangeFrame = (frameType)=>{
+        setFrameType(frameType)
+    }
+
     return (
         <div className="profile">
-            <UpdateProfile user={user}/>
-            <Frame/>
+            <UpdateProfile user={user} onClickToChangeFrame={handleClickToChangeFrame}/>
+            <Frame frameType = {frameType}/>
         </div>
     );
 }

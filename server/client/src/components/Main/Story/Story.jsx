@@ -31,9 +31,9 @@ function Story(props) {
         <div className='main-story-background'>
             <div className='main-story'>
                 <div className='col main-story-text'>
-                    <p>Hippo will bring for you any experience.</p>
+                    <p>Hippo will bring for you any experiences.</p>
                     <p>Watching with high quality. </p>
-                    <p>Providing any famous Game show...</p>
+                    <p>Providing any famous TV shows...</p>
                 </div>
                 <div className='col main-story-img'>
                     <video loop={true} autoPlay={true} muted={true} >

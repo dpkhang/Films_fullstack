@@ -76,7 +76,7 @@ function Ask(props) {
                     <p className="question" onClick={handleClick}>Is good for kids ?</p>
                     <div className="content">
                         <p className="text">
-                            Of course. Hippo has to many Kids shows for your children.
+                            Yes, sir! Hippo has to many Kids shows for your children.
                         </p>
                         <p className="text">
                             Hippo supports learning shows for children. 
