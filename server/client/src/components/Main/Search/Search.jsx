@@ -36,8 +36,8 @@ function Search(props) {
                         </div>
                     </div>
                     <div className='main-login account'>
-                        <Link className="item-btn btn-sign-up" to="/register">Sign up</Link>
                         <Link className="item-btn btn" to="/login">Sign in</Link>
+                        <Link className="item-btn btn-sign-up" to="/register">Sign up</Link>
                     </div>
                 </div>
             </div>

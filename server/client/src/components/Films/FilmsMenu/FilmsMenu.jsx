@@ -20,10 +20,6 @@ function MasterFilmsMenu(props) {
             label: 'Series Movies',
             exact: false,
         },
-        {
-            label: 'Trailers',
-            exact: false,
-        },
     ]
 
     const handleShowExplorer = (e)=>{
@@ -51,7 +47,7 @@ function MasterFilmsMenu(props) {
                 </div>
             </div>
             <ul className='master-films-right'  onClick={handleHideExplorer}>
-                <LinkMenu className="li-master-films-menu" label="New" to="/films/" exact={true}/>
+                <LinkMenu className="li-master-films-menu" label="Home" to="/films/" exact={true}/>
                 { menu }
             </ul>
         </div>

@@ -93,8 +93,9 @@
                 transition: letter-spacing .5s;
             }
             .btn-sign-up {
-                background-color: rgb(255, 255, 255);
-                color: #333;
+                background: none;
+                border: 1px solid white;
+                color: white;
             }
         }
     }

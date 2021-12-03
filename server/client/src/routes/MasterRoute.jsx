@@ -8,6 +8,7 @@ import Details from '../components/Films/Pages/Detail'
 import Home from '../components/Films/Pages/Home'
 import Actors from '../components/Films/Pages/Actor'
 import Profile from '../components/Films/Pages/Profile'
+import History from '../components/Films/Pages/History'
 const MasterSubRouter= [
     {
         path: '/',
@@ -53,6 +54,11 @@ const MasterSubRouter= [
         path: '/profile',
         exact: false,
         component: ()=> <Profile></Profile>
+    },
+    {
+        path: '/history',
+        exact: false,
+        component: ()=> <History></History>
     },
     {
         path: '',
